@@ -1,3 +1,4 @@
 -e .
 git+git://github.com/adamcharnock/swiftwind.git@master#egg=swiftwind
 git+git://github.com/adamcharnock/django-hordak.git@master#egg=django-hordak
+django
