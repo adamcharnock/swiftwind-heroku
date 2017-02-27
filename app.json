@@ -10,7 +10,7 @@
   "scripts": {
     "postdeploy": "./manage.py migrate && ./manage.py create_superuser_with_password --no-input --email $EMAIL --password $PASSWORD --username $USERNAME --preserve",
     "dokku": {
-      "postdeploy": "./manage.py migrate && ./manage.py create_superuser_with_password --no-input --email $EMAIL --password $PASSWORD --username $USERNAME --preserve"
+      "postdeploy": "./manage.py migrate"
     }
   },
   "env": {
