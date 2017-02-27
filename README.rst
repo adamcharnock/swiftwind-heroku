@@ -1,12 +1,6 @@
 Swiftwind for Heroku Deployment
 ===============================
 
-.. image:: https://badge.fury.io/py/swiftwind-heroku.png
-    :target: https://badge.fury.io/py/swiftwind-heroku
-
-.. image:: https://pypip.in/d/swiftwind-heroku/badge.png
-    :target: https://pypi.python.org/pypi/swiftwind-heroku
-
 For more details see the `Swiftwind project`_.
 
 Installation
