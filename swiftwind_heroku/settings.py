@@ -31,6 +31,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'bootstrap3',
+    'mptt',
+    'django_extensions',
+    'django_celery_beat',
+
+    'swiftwind.core',
+    'swiftwind.accounts',
+    'swiftwind.bank_imports',
+    'swiftwind.bank_rules',
+    'swiftwind.bank_transactions',
+    'swiftwind.billing_cycle',
+    'swiftwind.bills',
+    'swiftwind.costs',
+    'swiftwind.dashboard',
+    'swiftwind.housemates',
+    'swiftwind.transactions',
+
+    'hordak',
+    'django_adminlte',
 ]
 
 MIDDLEWARE = [
@@ -104,11 +124,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/auth/login/'
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
