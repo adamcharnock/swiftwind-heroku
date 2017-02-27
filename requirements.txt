@@ -1,0 +1,2 @@
+-e .
+git+git://github.com/adamcharnock/swiftwind.git@master#egg=swiftwind

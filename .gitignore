@@ -1,0 +1,7 @@
+*.log
+.DS_Store
+*.pyc
+*.swp
+/static/
+/build
+/dist
