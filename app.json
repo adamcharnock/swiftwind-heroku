@@ -1,0 +1,33 @@
+{
+  "name": "Swiftwind",
+  "description": "Accounting for shared households.",
+  "keywords": [
+    "lifestyle",
+    "accounting"
+  ],
+  "repository": "https://github.com/adamcharnock/swiftwind-heroku",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake bootstrap"
+  },
+  "env": {
+    "SECRET_KEY": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  },
+  "image": "heroku/python",
+  "addons": [
+    {
+      "plan": "heroku-redis:hobby-dev"
+    },
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    }
+  ]
+}

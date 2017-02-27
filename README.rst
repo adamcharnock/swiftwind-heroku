@@ -1,7 +1,6 @@
 Swiftwind for Heroku Deployment
 ===============================
 
-
 .. image:: https://badge.fury.io/py/swiftwind-heroku.png
     :target: https://badge.fury.io/py/swiftwind-heroku
 
@@ -11,12 +10,16 @@ Swiftwind for Heroku Deployment
 Installation
 ------------
 
+.. image:: https://www.herokucdn.com/deploy/button.svg
+    :target: https://heroku.com/deploy?template=https://github.com/adamcharnock/swiftwind-heroku
+
 Environment variables::
 
+    # Should be setup automatically for you:
     SECRET_KEY='<a random value>'
     DATABASE_URL='postgres://user:pasword@host/dbname'
 
-    # If you are using HTTPS you may wish to set the following:
+    # If you are using HTTPS you may wish to set the following yourself:
     HTTPS=1  # Will ensure site is served over HTTPS only
     HSTS_SECONDS=100000  # Will enable HSTS, and set the seconds timeout
     HSTS_INCLUDE_SUBDOMAINS=1  # Apply HSTS to subdomains
