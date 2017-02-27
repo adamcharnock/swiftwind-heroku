@@ -24,6 +24,7 @@ setup(
     install_requires=[
         'swiftwind',
         'dj_database_url',
+        'dj_static',
     ],
     # Ensure we include files from the manifest
     include_package_data=True,
