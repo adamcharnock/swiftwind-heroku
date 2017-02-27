@@ -57,6 +57,6 @@
     },
     "worker_and_beat": {
       "quantity": 1
-    },
+    }
   }
 }
