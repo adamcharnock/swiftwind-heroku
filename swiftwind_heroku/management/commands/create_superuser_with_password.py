@@ -1,6 +1,3 @@
-import os
-import argparse
-
 from django.contrib.auth.management.commands import createsuperuser
 from django.core.management import CommandError
 
@@ -14,6 +11,10 @@ class Command(createsuperuser.Command):
             '--password', dest='password', default=None,
             help='Specifies the password for the superuser.',
         )
+        parser.add_argument(
+            '--preserve', dest='preserve', default=False, action='store_true',
+            help='Exit normally if the user already exists.',
+        )
 
     def handle(self, *args, **options):
         password = options.get('password')
@@ -22,6 +23,12 @@ class Command(createsuperuser.Command):
 
         if password and not username:
             raise CommandError("--username is required if specifying --password")
+
+        if username and options.get('preserve'):
+            exists = self.UserModel._default_manager.db_manager(database).filter(username=username).exists()
+            if exists:
+                self.stdout.write("User exists, exiting normally due to --preserve")
+                return
 
         super(Command, self).handle(*args, **options)
 

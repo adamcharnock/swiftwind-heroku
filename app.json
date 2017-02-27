@@ -8,15 +8,28 @@
   "repository": "https://github.com/adamcharnock/swiftwind-heroku",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "./manage.py migrate",
+    "postdeploy": "./manage.py migrate && ./manage.py create_superuser_with_password --no-input --email $EMAIL --password $PASSWORD --username $USERNAME --preserve",
     "dokku": {
-      "postdeploy": "./manage.py migrate"
+      "postdeploy": "./manage.py migrate && ./manage.py create_superuser_with_password --no-input --email $EMAIL --password $PASSWORD --username $USERNAME --preserve"
     }
   },
   "env": {
     "SECRET_KEY": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
+    },
+    "EMAIL": {
+      "description": "Email address for the admin user",
+      "required": true
+    },
+    "USERNAME": {
+      "description": "Username for the admin user",
+      "required": true,
+      "value": "admin"
+    },
+    "PASSWORD": {
+      "description": "Password for the admin user",
+      "required": true
     }
   },
   "image": "heroku/python",
