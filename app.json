@@ -31,7 +31,7 @@
       "description": "Password for the admin user",
       "required": true
     },
-    "DEFAULT_CURRENCY": {
+    "CURRENCY": {
       "description": "Default currency (e.g. USD, EUR, GBP etc)",
       "required": true,
       "value": "USD"
