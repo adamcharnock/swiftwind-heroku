@@ -8,7 +8,10 @@
   "repository": "https://github.com/adamcharnock/swiftwind-heroku",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "bundle exec rake bootstrap"
+    "postdeploy": "./manage.py migrate",
+    "dokku": {
+      "postdeploy": "./manage.py migrate"
+    }
   },
   "env": {
     "SECRET_KEY": {
