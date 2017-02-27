@@ -111,9 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.10/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -127,6 +124,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_URL = '/auth/login/'
+
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_BROKER_URL = (os.environ.get('BROKER_URL') or os.environ.get('REDIS_URL') or 'redis://localhost') + '/0'
+CELERY_WORKER_CONCURRENCY = 1
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True

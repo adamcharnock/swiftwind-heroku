@@ -21,6 +21,14 @@ Environment variables::
     HSTS_SECONDS=100000  # Will enable HSTS, and set the seconds timeout
     HSTS_INCLUDE_SUBDOMAINS=1  # Apply HSTS to subdomains
 
+Required Heroku Plugins
+~~~~~~~~~~~~~~~~~~~~~~~
+
+You will need the following plugins:
+
+  * Postgres
+  * Redis
+
 Usage
 -----
 

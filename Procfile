@@ -1,2 +1,4 @@
 web: gunicorn example_project.wsgi --log-file -
-worker: celery -A example_project worker --beat -l info -c 1 --scheduler=django
+worker_and_beat: celery -A swiftwind_heroku worker --beat -l info
+worker: celery -A swiftwind_heroku worker --beat -l info
+beat: celery -A swiftwind_heroku beat -l info
