@@ -8,7 +8,7 @@
   "repository": "https://github.com/adamcharnock/swiftwind-heroku",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "./manage.py migrate && ./manage.py create_superuser_with_password --no-input --email $EMAIL --password $PASSWORD --username $USERNAME --preserve",
+    "postdeploy": "./manage.py migrate && ./manage.py create_superuser_with_password --no-input --email $EMAIL --password $PASSWORD --username $USERNAME --preserve && ./manage.py swiftwind_create_accounts --preserve --currency $CURRENCY",
     "dokku": {
       "postdeploy": "./manage.py migrate"
     }
@@ -30,6 +30,11 @@
     "PASSWORD": {
       "description": "Password for the admin user",
       "required": true
+    },
+    "DEFAULT_CURRENCY": {
+      "description": "Default currency (e.g. USD, EUR, GBP etc)",
+      "required": true,
+      "value": "USD"
     }
   },
   "image": "heroku/python",
