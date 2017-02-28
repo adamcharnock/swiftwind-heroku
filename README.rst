@@ -36,7 +36,7 @@ This project is also designed to support deployment to dokku. To do so you will 
 * A Postgres database (See `Postgres Dokku plugin`_)
 * A Redis server (`Redis Dokku plugin`_)
 
-You can deploy as follows:
+You can deploy as follows::
 
     # Get the repo
     git clone https://github.com/adamcharnock/swiftwind-heroku.git
