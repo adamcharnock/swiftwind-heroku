@@ -70,3 +70,4 @@ swiftwind-heroku is packaged using seed_.
 .. _Swiftwind project: https://github.com/adamcharnock/swiftwind
 .. _Postgres Dokku plugin: https://github.com/dokku/dokku-postgres
 .. _Redis Dokku plugin: https://github.com/dokku/dokku-redis
+.. _Adam Charnock: https://adamcharnock.com
