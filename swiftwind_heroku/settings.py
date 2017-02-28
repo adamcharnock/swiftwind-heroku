@@ -128,6 +128,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, '.static')
 
 LOGIN_URL = '/auth/login/'
 
+SWIFTWIND_DEFAULT_CURRENCY = os.environ.get('CURRENCY', 'USD')
+
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
