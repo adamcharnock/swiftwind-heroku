@@ -23,18 +23,18 @@ Environment variables::
 Required Heroku Addons
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The following addons will be setup (on the free plan of each):
+The free plan for each of the following addons will be setup:
 
-  * Postgres
-  * Redis
+* Postgres
+* Redis
 
 Dokku
 ~~~~~
 
 This project is also designed to support deployment to dokku. To do so you will need:
 
-  * A Postgres database (See `Postgres Dokku plugin`_)
-  * A Redis server (`Redis Dokku plugin`_)
+* A Postgres database (See `Postgres Dokku plugin`_)
+* A Redis server (`Redis Dokku plugin`_)
 
 You can deploy as follows:
 
