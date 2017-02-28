@@ -28,10 +28,25 @@ The following addons will be setup (on the free plan of each):
   * Postgres
   * Redis
 
+Dokku
+~~~~~
+
+This project is also designed to support deployment to dokku. You can do so as follows:
+
+    dokku apps:create swiftwind
+    dokku config:set SECRET_KEY=random-string
+    dokku config:set DATABASE_URL=postgres://user:password@host/dbname
+    git push dokku
+    ./manage.py migrate
+    # Create a user you will use to login as
+    ./manage.py createsuperuser
+    # Set currency as you wish (GBP, EUR, USD etc)
+    ./manage.py create_chart_of_accounts --currency USD
+
 Credits
 -------
 
-*Any credits here*
+Developed by `Adam Charnock`_. I'm a freelance developer, so do get in touch if you have a project.
 
 swiftwind-heroku is packaged using seed_.
 
