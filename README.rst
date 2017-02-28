@@ -37,11 +37,11 @@ This project is also designed to support deployment to dokku. You can do so as f
     dokku config:set SECRET_KEY=random-string
     dokku config:set DATABASE_URL=postgres://user:password@host/dbname
     git push dokku
-    ./manage.py migrate
+    dokku run ./manage.py migrate
     # Create a user you will use to login as
-    ./manage.py createsuperuser
+    dokku run ./manage.py createsuperuser
     # Set currency as you wish (GBP, EUR, USD etc)
-    ./manage.py create_chart_of_accounts --currency USD
+    dokku run ./manage.py create_chart_of_accounts --currency USD
 
 Credits
 -------
