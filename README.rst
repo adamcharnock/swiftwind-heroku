@@ -59,6 +59,22 @@ You can deploy as follows::
     # Set currency as you wish (GBP, EUR, USD etc)
     dokku run ./manage.py create_chart_of_accounts --currency USD
 
+Troubleshooting
+~~~~~~~~~~~~~~~
+
+Django does not display very helpful errors when deploying into production, and for good reason.
+However, you can enable debugging output to help fix any server errors you may see
+when accessing sentry in your browser::
+
+    heroku config:set DEBUG=1
+    heroku config:unset DEBUG
+
+You can also view the server logs::
+
+    heroku logs -t
+
+Note you can replace ``heroku`` with ``dokku`` in any of the above commands.
+
 Credits
 -------
 
