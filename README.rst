@@ -57,7 +57,7 @@ You can deploy as follows::
     # Create a user you will use to login as
     dokku run ./manage.py createsuperuser
     # Set currency as you wish (GBP, EUR, USD etc)
-    dokku run ./manage.py create_chart_of_accounts --currency USD
+    dokku run ./manage.py swiftwind_create_accounts --currency USD
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
