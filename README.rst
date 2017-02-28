@@ -31,11 +31,27 @@ The following addons will be setup (on the free plan of each):
 Dokku
 ~~~~~
 
-This project is also designed to support deployment to dokku. You can do so as follows:
+This project is also designed to support deployment to dokku. To do so you will need:
 
+  * A Postgres database (See `Postgres Dokku plugin`_)
+  * A Redis server (`Redis Dokku plugin`_)
+
+You can deploy as follows:
+
+    # Get the repo
+    git clone https://github.com/adamcharnock/swiftwind-heroku.git
+    cd swiftwind-heroku
+
+    # Create the app and set the config
     dokku apps:create swiftwind
     dokku config:set SECRET_KEY=random-string
-    dokku config:set DATABASE_URL=postgres://user:password@host/dbname
+
+    dokku postgres:create swiftwind
+    dokku postgres:link swiftwind swiftwind
+
+    dokku redis:create swiftwind
+    dokku redis:link swiftwind swiftwind
+
     git push dokku
     dokku run ./manage.py migrate
     # Create a user you will use to login as
@@ -52,3 +68,5 @@ swiftwind-heroku is packaged using seed_.
 
 .. _seed: https://github.com/adamcharnock/seed/
 .. _Swiftwind project: https://github.com/adamcharnock/swiftwind
+.. _Postgres Dokku plugin: https://github.com/dokku/dokku-postgres
+.. _Redis Dokku plugin: https://github.com/dokku/dokku-redis
