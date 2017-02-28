@@ -3,3 +3,8 @@ Change-log for swiftwind-heroku.
 This file will be added to as part of each release
 
 ----
+
+Version 0.1.0 (first version), Tue 28 Feb 2017
+===============================================
+
+
