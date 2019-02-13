@@ -8,7 +8,7 @@
   "repository": "https://github.com/adamcharnock/swiftwind-heroku",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "./manage.py migrate -v2 && ./manage.py create_superuser_with_password --no-input --email $EMAIL --password $PASSWORD --username $USERNAME --preserve && ./manage.py swiftwind_create_accounts --preserve --currency $CURRENCY",
+    "postdeploy": "./manage.py migrate -v2 && ./manage.py create_superuser_with_password --no-input --email $EMAIL --password $PASSWORD --username $USERNAME --preserve && ./manage.py swiftwind_create_accounts --preserve --currency $CURRENCY && ./manage.py shell -c \"from django.contrib.sites.models import Site; Site.objects.get_or_create(defaults=dict(name='Swiftwind', domain='example.com'))\"",
     "dokku": {
       "postdeploy": "./manage.py migrate -v2"
     }
