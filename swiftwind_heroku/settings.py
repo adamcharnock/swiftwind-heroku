@@ -38,16 +38,16 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_celery_beat',
 
+    
     'swiftwind.core',
     'swiftwind.accounts',
-    'swiftwind.bank_imports',
-    'swiftwind.bank_rules',
-    'swiftwind.bank_transactions',
     'swiftwind.billing_cycle',
     'swiftwind.bills',
     'swiftwind.costs',
     'swiftwind.dashboard',
     'swiftwind.housemates',
+    'swiftwind.settings',
+    'swiftwind.system_setup',
     'swiftwind.transactions',
     'swiftwind_heroku',
 
